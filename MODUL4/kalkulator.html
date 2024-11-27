@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 30px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        input{
+            margin-bottom: 5px;
+            font-weight: 200;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="hasil" id="hasil"> <br>
+    <button onclick="Angka(this.innerHTML)">0</button>
+    <button onclick="Angka(this.innerHTML);">1</button>
+    <button onclick="Angka(this.innerHTML);">2</button>
+    <button onclick="Angka(this.innerHTML);">3</button> <br>
+    <button onclick="Angka(this.innerHTML);">4</button>
+    <button onclick="Angka(this.innerHTML);">5</button>
+    <button>6</button>
+    <button>7</button><br>
+    <button>8</button>
+    <button>9</button>
+    <button onclick="Hitung()">-</button>
+    <button onclick="Operator(this.innerHTML)">+</button><br>
+    <button style="width: 135px;">=</button>
+
+    <script>
+        let varsementara=""
+        let bil1=0, bil2=0, opr="";
+        function Angka(x){
+            varsementara=varsementara+x;
+            if(opr==""){
+                bil1=varsementara;
+                varsementara="";
+
+            } else {
+                bil2=varsementara;
+                varsementara="";
+
+            }
+
+        }
+        function Operator(x){
+            if(x=="+"){
+                opr="+";
+                varsementara="";
+            }
+        }
+
+        function Hitung(){
+            if(opr=="+"){
+            document.getElementById('hasil').value= parseFloat(bil1)+parseFloat(bil2);
+
+        }
+    }
+    </script>
+</body>
+</html>
